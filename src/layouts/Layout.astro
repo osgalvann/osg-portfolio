@@ -1,3 +1,7 @@
+---
+import Header from "../components/header/Header.astro";
+---
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,11 +17,11 @@
     ></script>
     <script type="module">
       const vantaObj = {
-        el: "#bg",
+        el: "html",
         mouseControls: true,
         touchControls: true,
         gyroControls: false,
-        minHeight: 200.0,
+        minHeight: 1000.0,
         minWidth: 200.0,
         highlightColor: 0x3091f2,
         midtoneColor: 0xf5932e,
@@ -30,9 +34,16 @@
 
       VANTA.FOG(vantaObj);
     </script>
-    <title>Document</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Oscar Galvan</title>
   </head>
-  <body id="bg">
+  <body>
+    <Navbar />
     <slot />
   </body>
 </html>
+<style>
+  :root {
+    height: max-content;
+  }
+</style>

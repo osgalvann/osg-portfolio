@@ -1,10 +1,29 @@
 ---
 import Navbar from "./Navbar.astro";
-import SocialLinks from "./SocialLinks.astro";
 ---
 
 <header>
-  <a href="/"> <img id="logo" style="width: 5em" src="favicon.svg" alt="" /></a>
+  <a id="name" href="/">
+    <img id="logo" style="width: 1.5em" src="logo.png" alt="" />
+    osgalvan
+  </a>
   <Navbar />
-  <SocialLinks />
 </header>
+<style>
+  header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  #name {
+    display: flex;
+    align-items: center;
+    margin-right: 1em;
+    font-size: 2em;
+    font-weight: 500;
+  }
+  #name img {
+    margin-right: 0.2em;
+  }
+</style>

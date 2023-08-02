@@ -1,10 +1,59 @@
+---
+import SocialLinks from "./SocialLinks.astro";
+
+const navItems: { label: string; href: string }[] = [
+  { label: "Home", href: "#top" },
+  { label: "Skills", href: "#Skills" },
+  { label: "Work", href: "#Work" },
+  { label: "About", href: "#Wbout" },
+  { label: "Contact", href: "#Contact" },
+];
+---
+
 <nav>
-  <ul></ul>
+  <ul>
+    {
+      navItems.map(({ label, href }) => (
+        <li>
+          <a class="nav-item" href={href}>
+            {label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+  <SocialLinks />
 </nav>
 <style>
-  nav {
+  * {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+  }
+  ul {
     display: flex;
-    flex-direction: row;
-    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 0.8em;
+  }
+
+  nav {
+    display: inline-block;
+    padding: 1em;
+    border-radius: 2.5em;
+    background-color: var(--gray-bg);
+    box-shadow: var(--shadow-1);
+  }
+
+  .nav-item {
+    font-size: var(--text-md);
+    font-weight: 800;
+    border-radius: 2em;
+    padding: 0.5em 0.8em;
+  }
+  .nav-item:hover {
+    font-weight: 800;
+    background-color: var(--accent-overlay);
   }
 </style>

@@ -1,5 +1,6 @@
 ---
 import Header from "../components/header/Header.astro";
+import "../styles/global.css";
 ---
 
 <!DOCTYPE html>
@@ -38,12 +39,7 @@ import Header from "../components/header/Header.astro";
     <title>Oscar Galvan</title>
   </head>
   <body>
-    <Navbar />
+    <Header />
     <slot />
   </body>
 </html>
-<style>
-  :root {
-    height: max-content;
-  }
-</style>
